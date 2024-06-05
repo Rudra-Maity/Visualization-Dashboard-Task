@@ -20,13 +20,16 @@ Chart.register(CategoryScale);
 
 const Main = () => {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     const fetchDataFromApi = async () => {
-      const API_URL = "http://localhost:5000";
+      const API_URL = "";
       try {
-        const response = await axios.get(`${API_URL}/api/data`);
+        const response = await axios.get(`${API_URL}/data`);
+        console.log('ctgtgg',response.data);
         setData(response.data);
+        setFilteredData(response.data);
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -38,55 +41,53 @@ const Main = () => {
 
   return (
     <ChakraProvider>
-      <Navbar data={data} setFilteredData={setData}/>
+      <Navbar data={data} setFilteredData={setFilteredData}/>
       <AdminDashboard />
-      <IntensityChart data={data} />
-      <Flex direction={{ base: "column", md: "row" }} m={50}>
-        <Box
-          flex={{ base: "1", md: "0.5" }}
-          maxW="50%"
-          p={5}
-          m={2}
-          boxShadow="0px 0px 10px rgba(0, 0, 0, 0.1)"
-          borderRadius={20}
-          display="block"
-        >
-          <Heading as="h2" mb={4}>Region Chart</Heading>
-          <RegionChart data={data} />
-        </Box>
-        <Box
-          flex={{ base: "1", md: "0.5" }}
-          maxW="50%"
-          p={5}
-          m={2}
-          boxShadow="0px 0px 10px rgba(0, 0, 0, 0.1)"
-          borderRadius={20}
-          display="block"
-        >
-          <Heading as="h2" mb={4}>Topics Chart</Heading>
-          <TopicsRadarChart data={data} />
-        </Box>
-      </Flex>
-      <RelevanceBubbleChart data={data} />
-      <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={4}>
+      <IntensityChart data={filteredData} />
+    
         <Box>
-          <PieChart data={data} />
+          <LikelihoodRadarChart data={filteredData} />
         </Box>
         <Box>
-          <LikelihoodRadarChart data={data} />
-        </Box>
-      </Grid>
-      <CountryChart data={data} />
-      <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={4}>
-        <Box>
-          <Heading as="h2" mb={4}>City Chart</Heading>
-          <CityChart data={data} />
-        </Box>
+      <RelevanceBubbleChart data={filteredData} />
+      </Box>
         <Box>
           <Heading as="h2" mb={4}>Year Chart</Heading>
-          <YearChart data={data} />
+          <YearChart  data={filteredData} />
         </Box>
-      </Grid>
+        <Box>
+      <CountryChart data={filteredData} />
+      </Box>
+        <Box
+          maxW="100%"
+          p={5}
+          m={2}
+          boxShadow="0px 0px 10px rgba(0, 0, 0, 0.1)"
+          borderRadius={20}
+          display="block"
+          maxH='100%'
+        >
+          <TopicsRadarChart data={filteredData} />
+        </Box>
+        <Box
+          maxW="100%"
+          p={5}
+          m={2}
+          boxShadow="0px 0px 10px rgba(0, 0, 0, 0.1)"
+          borderRadius={20}
+          display="block"
+          maxH='100%'
+        >
+          <RegionChart data={filteredData} />
+        </Box>
+        <Box>
+          <PieChart data={filteredData} />
+        </Box>
+        <Box>
+          <Heading as="h2" mb={4}>City Chart</Heading>
+          {/* {console.log('dd',filteredData)} */}
+          <CityChart data={filteredData} />
+        </Box>
       <Footer />
     </ChakraProvider>
   );

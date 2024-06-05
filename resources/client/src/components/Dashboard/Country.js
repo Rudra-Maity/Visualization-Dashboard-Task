@@ -73,22 +73,7 @@ const CountryChart = ({ data }) => {
         <Heading as={"h2"} textAlign="left" mb={4} style={{ textAlign: "left" }} >
           Country Chart
         </Heading>
-        <Select
-          value={selectedCountry}
-          onChange={handleCountryChange}
-          mb={4}
-          w="200px"
-          colorScheme="purple"
-        >
-          <option value="United States of America">
-            United States of America
-          </option>
-          <option value="Mexico">Mexico</option>
-          <option value="Nigeria">Nigeria</option>
-          <option value="Lebanon">Lebanon</option>
-          <option value="Russia">Russia</option>
-          <option value="Saudi Arabia">Saudi Arabia</option>
-        </Select>
+       
         <Box height="500px" width={"100%"}>
           {chartData && <Radar data={chartData} options={chartOptions} />}
         </Box>

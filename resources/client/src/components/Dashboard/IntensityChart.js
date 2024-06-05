@@ -114,7 +114,7 @@ const IntensityChart = ({ data }) => {
   };
 
   return (
-    <div style={{ margin: '50px', padding: '20px', width: '80%', height: '500px', fontFamily: 'Arial, sans-serif', borderRadius: '8px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
+    <div style={{ margin: '50px 10px 20px 5px', padding: '20px', width: '100%', height: '100%', fontFamily: 'Arial, sans-serif', borderRadius: '8px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
       <Heading as="h2" mb={4}>Intensity Chart</Heading>
       <Line data={chartData} options={chartOptions} plugins={[ChartDataLabels]} />
     </div>

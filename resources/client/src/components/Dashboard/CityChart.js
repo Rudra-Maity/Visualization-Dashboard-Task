@@ -3,6 +3,7 @@ import { Bar } from 'react-chartjs-2';
 
 const CityChart = ({ data }) => {
   // Function to count occurrences of each city
+  console.log('czca',data);
   const countCities = () => {
     const cityCounts = {};
     data.forEach((item) => {
@@ -29,6 +30,7 @@ const CityChart = ({ data }) => {
         data: cityValues,
         backgroundColor: 'rgba(75, 192, 192, 0.6)',
         borderWidth: 1,
+        
       },
     ],
   };

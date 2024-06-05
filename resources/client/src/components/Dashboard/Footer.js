@@ -3,7 +3,7 @@ import { Box, Text, Link, Flex, useColorModeValue, Icon, Stack } from "@chakra-u
 import { RiFacebookBoxFill, RiTwitterFill, RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
-  const footerBgGradient = useColorModeValue("linear(to-r, teal.500, blue.500)", "linear(to-r, teal.200, blue.200)");
+  const footerBgGradient = useColorModeValue("linear(to-r, teal.500, blue)", "linear(to-r, teal.200, blue.600)");
   const textColor = useColorModeValue("white", "gray.800");
   const iconColor = useColorModeValue("whiteAlpha.900", "gray.800");
 
@@ -13,9 +13,10 @@ const Footer = () => {
         direction={{ base: "column", md: "row" }}
         justify="space-between"
         align="center"
-        maxW="container.lg"
+        maxW="container"
         mx="auto"
         px={4}
+        
       >
         <Text fontSize="md" color={textColor} mb={{ base: 4, md: 0 }}>
           &copy; 2024 Rudrapriy Maity. All rights reserved.

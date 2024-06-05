@@ -39,14 +39,14 @@ const LoginPage = () => {
         p={8}
         borderWidth={1}
         borderRadius="lg"
-        boxShadow="lg"
+        boxShadow='2xl'
         borderColor="white" 
         textAlign="center"
       >
-        <h1 style={{ color: 'white' }}>Welcome Admin !!!</h1>
+        <h1 style={{ color: 'white',fontSize:'20px' }}>Welcome Admin </h1>
         <form>
           <FormControl>
-            <FormLabel style={{ color: 'white' }}>Admin Email</FormLabel>
+            <FormLabel style={{ color: 'white' }}> Email</FormLabel>
             <Input color={'white'}
               type="text"
               placeholder="Enter your username"
@@ -68,11 +68,10 @@ const LoginPage = () => {
           <Button colorScheme="green" mt={6} w="100%" onClick={handleLogin}>
             Login
           </Button>
-          {/* AlertDialog */}
           <AlertDialog isOpen={isOpen} leastDestructiveRef={undefined}>
             <AlertDialogOverlay>
               <AlertDialogContent bg="white" color="black">
-                <AlertDialogHeader>Welcome Admin !!!</AlertDialogHeader>
+                <AlertDialogHeader fontSize='22px'>Welcome Admin </AlertDialogHeader>
                 <AlertDialogBody>
                   Redirecting to the dashboard page...
                 </AlertDialogBody>

@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
@@ -44,7 +45,13 @@ const YearChart = ({ data }) => {
     },
   };
 
-  return <Line data={chartData} options={chartOptions} />;
+  return(
+   <Line style={{ 
+    margin :'10px',
+    width: '100vw'
+   }} data={chartData} options={chartOptions} />
+ 
+   );
 };
 
 export default YearChart;

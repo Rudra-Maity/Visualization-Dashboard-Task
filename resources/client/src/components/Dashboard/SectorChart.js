@@ -92,6 +92,8 @@ const RadarChart = ({ data }) => {
       maxHeight={700}
       overflow="hidden"
       mx="auto"
+      height='100%'
+      // maxW='100%'
     >
       <Heading as="h2" mb={4} textAlign="center">
         Sector Intensity Radar Chart

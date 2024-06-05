@@ -91,8 +91,8 @@ const PolarAreaChart = ({ data }) => {
       borderRadius={18}
       boxShadow='0px 0px 10px rgba(0, 0, 0, 0.1)'
       bg={useColorModeValue("white", "gray.800")}
-      width="100vw" // Full viewport width
-      height="70vh" // 70% of viewport height
+      width="100%" // Full viewport width
+      height="130vh" // 70% of viewport height
       overflow="hidden"
       mx="auto"
     >

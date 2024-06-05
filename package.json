@@ -2,9 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js", 
+  "main": "server.js", 
   "scripts": {
-    "start": "nodemon src/app.js", 
+    "start": "node server.js", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

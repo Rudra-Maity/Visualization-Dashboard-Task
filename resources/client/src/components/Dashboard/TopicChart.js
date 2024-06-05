@@ -3,6 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import { Box, Heading } from '@chakra-ui/react';
 
 const TopicsBarChart = ({ data }) => {
+  console.log('saSAS',data);
   const topics = data.map(item => item.topic);
   const relevanceValues = data.map(item => item.relevance);
 
